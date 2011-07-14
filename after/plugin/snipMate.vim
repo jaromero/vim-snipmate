@@ -29,16 +29,18 @@ exec 'xnoremap ' . g:snips_trigger_key. ' s<c-o>:let<space>g:snipmate_content_vi
 
 " The default mappings for these are annoying & sometimes break snipMate.
 " You can change them back if you want, I've put them here for convenience.
-snor <bs> b<bs>
-snor <right> <esc>a
-snor <left> <esc>bi
-snor ' b<bs>'
-snor ` b<bs>`
-snor % b<bs>%
-snor U b<bs>U
-snor ^ b<bs>^
-snor \ b<bs>\
-snor <c-x> b<bs><c-x>
+if !exists('g:snips_extra_mappings')
+	snor <bs> b<bs>
+	snor <right> <esc>a
+	snor <left> <esc>bi
+	snor ' b<bs>'
+	snor ` b<bs>`
+	snor % b<bs>%
+	snor U b<bs>U
+	snor ^ b<bs>^
+	snor \ b<bs>\
+	snor <c-x> b<bs><c-x>
+endif
 
 " By default load snippets in snippets_dir
 if empty(snippets_dir)

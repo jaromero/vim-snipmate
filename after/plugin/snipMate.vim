@@ -29,7 +29,7 @@ exec 'xnoremap ' . g:snips_trigger_key. ' s<c-o>:let<space>g:snipmate_content_vi
 
 " The default mappings for these are annoying & sometimes break snipMate.
 " You can change them back if you want, I've put them here for convenience.
-if !exists('g:snips_extra_mappings')
+if !exists('g:snips_disable_extra_mappings')
 	snor <bs> b<bs>
 	snor <right> <esc>a
 	snor <left> <esc>bi

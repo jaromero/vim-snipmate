@@ -1,6 +1,6 @@
 " File:          snipMate.vim
 " Author:        Michael Sanders
-" Version:       0.84
+" Version:       0.85
 " Description:   snipMate.vim implements some of TextMate's snippets features in
 "                Vim. A snippet is a piece of often-typed text that you can
 "                insert into your document using a trigger word followed by a "<tab>".
@@ -28,10 +28,10 @@ if (!exists('g:snipMateSources'))
 endif
 
 au BufRead,BufNewFile *.snippet set ft=snippet
-au FileType snippet setl noet
+au FileType snippet setl noet nospell
 
 au BufRead,BufNewFile *.snippets set ft=snippets
-au FileType snippets setl noet fdm=expr fde=getline(v:lnum)!~'^\\t\\\\|^$'?'>1':1
+au FileType snippets setl noet nospell fdm=expr fde=getline(v:lnum)!~'^\\t\\\\|^$'?'>1':1
 
 " config which can be overridden (shared lines)
 if !exists('g:snipMate')
